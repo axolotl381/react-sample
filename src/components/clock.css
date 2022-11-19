@@ -1,0 +1,122 @@
+:root {
+  --degHour: 10deg;
+  --degMin: 90deg;
+  --degSec: 0deg;
+}
+
+.digital {
+  background: #999;
+  font-size: 32pt;
+}
+
+.clock {
+  width: 500px;
+  height: 500px;
+  background: #ddf6ff;
+  position: relative;
+  border-radius: 50%;
+  margin: auto;
+}
+.h-hand,
+.m-hand,
+.s-hand {
+  position: absolute;
+  transform-origin: bottom;
+  border-radius: 40%;
+}
+.h-hand {
+  width: 16px;
+  height: 160px;
+  background: #999;
+  top: calc(50% - 160px);
+  left: calc(50% - 8px);
+  rotate: var(--degHour);
+}
+.m-hand {
+  width: 10px;
+  height: 220px;
+  background: #999;
+  top: calc(50% - 220px);
+  left: calc(50% - 5px);
+  rotate: var(--degMin);
+}
+.s-hand {
+  width: 4px;
+  height: 200px;
+  background: #0bd;
+  top: calc(50% - 200px);
+  left: calc(50% - 2px);
+  rotate: var(--degSec);
+}
+.s-hand::after {
+  border-radius: 50%;
+  display: block;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: #0bd;
+  position: absolute;
+  bottom: -15px;
+  left: -15px;
+}
+
+.clock .memori > div {
+  /* background: red; */
+  display: block;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 3px);
+  width: 6px;
+  height: 50%;
+  transform-origin: bottom;
+}
+
+.clock .memori > div::after {
+  display: block;
+  background: gray;
+  left: calc(50% - 3px);
+  content: "";
+  width: 6px;
+  height: 15px;
+}
+
+.clock .memori > #one {
+  transform: rotate(30deg);
+}
+
+.clock .memori > #two {
+  transform: rotate(60deg);
+}
+
+.clock .memori > #three {
+  transform: rotate(90deg);
+}
+
+.clock .memori > #four {
+  transform: rotate(120deg);
+}
+
+.clock .memori > #five {
+  transform: rotate(150deg);
+}
+
+.clock .memori > #six {
+  transform: rotate(180deg);
+}
+
+.clock .memori > #seven {
+  transform: rotate(210deg);
+}
+
+.clock .memori > #eight {
+  transform: rotate(240deg);
+}
+.clock .memori > #nine {
+  transform: rotate(270deg);
+}
+.clock .memori > #ten {
+  transform: rotate(300deg);
+}
+.clock .memori > #eleven {
+  transform: rotate(330deg);
+}
