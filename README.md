@@ -48,3 +48,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ##　備忘録
 ①DOM の型、プロパティなどが分からないときは以下の DOM ライブラリを参照すること
 ./node_modules/typescript/lib/lib.dom.d.ts
+
+② 参考記事
+https://www.cresco.co.jp/blog/entry/18971/
