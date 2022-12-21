@@ -46,8 +46,31 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 ##　備忘録
-①DOM の型、プロパティなどが分からないときは以下の DOM ライブラリを参照すること
+1.DOM の型、プロパティなどが分からないときは以下の DOM ライブラリを参照すること
 ./node_modules/typescript/lib/lib.dom.d.ts
 
-② 参考記事
+2.FC の props について
+コンポーネントを関数を用いて作成する際に、Function Component（FC）を利用する。
+javaScript では型定義が props について不要であるが、typeScript では必要となる。
+例えば次のスクリプトでは console でエラーとなる。理由は props にプロパティ dog が含まれいることを確認できないためである。
+export const aaa: React.FC = (props) => {
+console.log(props.dog)
+}
+
+typeScript では FC にジェネリクスに型を定義すれば props の型として認識される。
+※引数に型を定義する必要なし。
+type Props = {
+dog:string
+}
+export const Todo: React.FC<Props> = (props) => {
+console.log(props.dog)
+};
+
+3.空のオブジェクト
+返却値なしの関数を型定義したいとき。{}は空オブジェクトとなるので void との記述間違いに注意。
+type={
+function1:()=> void
+}
+
+Reference
 https://www.cresco.co.jp/blog/entry/18971/
