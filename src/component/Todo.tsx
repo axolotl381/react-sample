@@ -1,11 +1,29 @@
 import React from "react";
-import InputTodo from "./InputTodo";
 
-const Todo: React.FC = () => {
+type typeTodo = {
+  key: string;
+  text: string;
+  done: boolean;
+};
+
+type Props = {
+  key: string;
+  todo: typeTodo;
+  onCheck: (s: typeTodo) => void;
+};
+
+export const Todo: React.FC<Props> = (props) => {
+  const { todo, onCheck } = props;
+
+  const handleChange = () => {
+    onCheck(todo);
+  };
+
   return (
-    <div>
-      <InputTodo />
-    </div>
+    <label>
+      <input type="checkbox" checked={todo.done} onChange={handleChange} />
+      <span>{todo.text}</span>
+    </label>
   );
 };
 
