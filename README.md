@@ -72,5 +72,17 @@ type={
 function1:()=> void
 }
 
+4.イベントハンドラで引数を使用する。
+下記の記述ではエラーとなる。理由は click 関数を実行を意味するからである。{}の中には関数（オブジェクト）を記述するルールである。
+<button onClick={click(1)}>One</div>
+
+以下の方法で引数を含めた関数を登録できる。
+アロー関数を利用
+<button onClick={()=>click(1)}>One</div>
+bind 関数を利用（第一引数を null に指定すると自信が this として関数が生成される。）
+<button onClick={click.bind(null,1)}>One</div>
+
+typescript ではアロー関数の利用が一般的
+
 Reference
 https://www.cresco.co.jp/blog/entry/18971/
