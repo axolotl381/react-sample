@@ -20,10 +20,10 @@ export const Todo: React.FC<Props> = (props) => {
   };
 
   return (
-    <label>
+    <div>
       <input type="checkbox" checked={todo.done} onChange={handleChange} />
       <span>{todo.text}</span>
-    </label>
+    </div>
   );
 };
 

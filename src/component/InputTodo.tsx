@@ -14,8 +14,10 @@ export const InputTodo: React.FC<Props> = (props) => {
   const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     // console.log(e.key);
     if (e.key === "Enter") {
-      props.onAdd(text);
-      setText("");
+      if (!text.match(/^$/)) {
+        props.onAdd(text);
+        setText("");
+      }
     }
   };
 
