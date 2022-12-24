@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
-export const InputTodo: React.FC = (props) => {
+type Props = {
+  onAdd: (s: string) => void;
+};
+
+export const InputTodo: React.FC<Props> = (props) => {
   const [text, setText] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -10,6 +14,7 @@ export const InputTodo: React.FC = (props) => {
   const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     // console.log(e.key);
     if (e.key === "Enter") {
+      props.onAdd(text);
       setText("");
     }
   };
