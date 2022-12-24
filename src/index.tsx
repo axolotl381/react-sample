@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import TodoApp from "./component/TodoApp";
 import reportWebVitals from "./reportWebVitals";
+import LinkButton from "./component/linkButton";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -10,6 +11,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <TodoApp />
+    <LinkButton url="https:google.com" text="google"></LinkButton>
   </React.StrictMode>
 );
 
