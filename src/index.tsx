@@ -1,17 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import { ChakraProvider } from "@chakra-ui/react";
+import Router from "./component/router/router";
 import TodoApp from "./component/TodoApp";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
 import LinkButton from "./component/linkButton";
-
+import CompoRegister from "./component/context";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <TodoApp />
-    <LinkButton url="https:google.com" text="google"></LinkButton>
+    <BrowserRouter>
+      <ChakraProvider>
+        <div>HEADER</div>
+        <Router />
+        <div>FOOTER</div>
+      </ChakraProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
