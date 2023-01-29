@@ -2,10 +2,10 @@ import React from "react";
 import "./App.scss";
 import { BrowserRouter } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
-import Sidebar from "./component/SideBar/SideBar";
-import Body from "./component/Body";
 import Router from "./component/router/router";
+import Body from "./component/Body";
 import ContextProvider from "./component/context/Context";
+import SideBarChakraUI from "./component/SideBar/SIdeBarChakraUI";
 
 function App() {
   return (
@@ -13,8 +13,10 @@ function App() {
       <BrowserRouter>
         <ContextProvider>
           <ChakraProvider>
-            <Sidebar />
-            <Router />
+            {/* <Sidebar /> */}
+            <SideBarChakraUI></SideBarChakraUI>
+            {/* <Body /> */}
+            {/* <Router /> */}
             {/* <div>FOOTER</div> */}
           </ChakraProvider>
         </ContextProvider>
